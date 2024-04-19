@@ -1,0 +1,27 @@
+
+name: Start Project Workflow
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  start_project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Change this to the Python version you're using
+
+    # - name: Install dependencies
+    #   run: |
+    #     pip install -r requirements.txt  # If you have any dependencies, provide them in requirements.txt
+
+    - name: Run Python script
+      run: python3 index.py  # Replace with the actual name of your Python script
